@@ -2,10 +2,10 @@ from player import Player
 
 
 class Human(Player):
-    def __init__(self):
-        super().__init__()
+   
+       
 
-    def human_choice(self):
+    def choose_gesture(self):
         print("Choose 0 for rock.\nChoose 1 for paper.\nChoose 2 for scissors.\nChoose 3 for lizard.\nChoose 4 for spock.")
         choice_made = False
         while choice_made == False:
@@ -27,3 +27,5 @@ class Human(Player):
                 choice_made = True
 
 
+    def choice_compare(self):
+        self.human_choice.gesture_chosen

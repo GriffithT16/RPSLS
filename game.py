@@ -1,18 +1,20 @@
-from player import Player
 from ai import Ai
 from human import Human
+import time
 
 class Game:
     def __init__(self):
         self.player_1 = Human
-        self.player_2 = Ai
+        self.ai = Ai('WORK')
     
     
-    def run_game(self):
+    def run_game(self):        
         self.welcome_message()
         self.rules_of_the_game()
         self.determine_how_many_players()
+        self.ai.choose_gesture()
         self.gameplay()
+
     
     def welcome_message(self):
         print('\nWelcome to RPSLS\nWho will be the winner?\nStart the game to find out!\n')
