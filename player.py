@@ -1,8 +1,9 @@
 class Player:
-    def __init__(self):
-        self.name = ""
-        self.gesture_chosen = ['rock', 'paper', 'scissors', 'lizard', 'spock']
-        
+    def __init__(self, name):
+        self.name = name
+        self.gesture_options = ['rock', 'paper', 'scissors', 'lizard', 'spock']
+        self.gesture_chosen = ""
+    
 
 
         
