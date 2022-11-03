@@ -1,11 +1,12 @@
 from player import Player
 from ai import Ai
 from human import Human
+import time
 
 class Game:
     def __init__(self):
-        self.player_1 = Human("Bob")
-        self.player_2 = Ai("Computer")
+        self.player_1 = None
+        self.player_2 = None
     
     
     def run_game(self):
@@ -17,26 +18,42 @@ class Game:
     
     def welcome_message(self):
         print('\nWelcome to RPSLS\nWho will be the winner?\nStart the game to find out!\n')
+        time.sleep(3)
 
     def rules_of_the_game(self):
         print('The rules of the game are as follows!\nRock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock')
-    
+        time.sleep(3)
+
     def determine_how_many_players(self):
         choice_made = False
         while choice_made == False:
-            player_count = input("How many players will there be - 1 or 2? ")
+            player_count = input("\nHow many players will there be - 1 or 2?\nEnter 3 for AI vs AI.\n")
             if player_count == "1":
-                print("Player 1 vs. AI")
+                self.player_1 = Human('')
+                self.player_2 = Ai('Computer')
+                self.player_1.name = input("\nInput player 1's name here:\n")
+                print(f"\n{self.player_1.name} vs. AI\n")
                 choice_made = True
             elif player_count == "2":
-                print("Player 1 vs Player 2")
+                self.player_1 = Human('')
+                self.player_2 = Human('')
+                self.player_1.name = input("\nInput player 1's name here:\n")
+                self.player_2.name = input("\nInput player 2's name here:\n")
+                print(f"\n{self.player_1.name} vs {self.player_2.name}\n")
+                choice_made = True
+            elif player_count == "3":
+                self.player_1 = Ai('Dell')
+                self.player_2 = Ai('Macintosh')
+                print(f"{self.player_1.name} vs. {self.player_2.name}")
                 choice_made = True
                 
     def gameplay(self):
+        print(f"{self.player_1.name}'s turn")
         self.player_1.choose_gesture()
-        print(f"{self.player_1.name} has chosen {self.player_1.gesture_chosen}!")
+        print(f"\n{self.player_1.name} has chosen {self.player_1.gesture_chosen}!\n")
+        print(f"{self.player_2.name}'s turn")
         self.player_2.choose_gesture()
-        print(f"{self.player_2.name} has chosen {self.player_2.gesture_chosen}!")
+        print(f"\n{self.player_2.name} has chosen {self.player_2.gesture_chosen}!\n")
         self.determine_winner()
 
 
@@ -117,34 +134,6 @@ class Game:
         
 
 
-    def name_to_number(name):
-        if name == "rock":
-            return 0
-        elif name == "paper":
-            return 1
-        elif name == "scissors":
-            return 2
-        elif name == "lizard":
-            return 3
-        elif name == "spock":
-            return 4
-        else:
-            return name + "is not a valid choice"
-
-
-    def number_to_name(number):
-        if number == 0:
-            return "rock"
-        elif number == 1:
-            return "paper"
-        elif number == 2:
-            return "scissors"
-        elif number == 3:
-            return "lizard"
-        elif number == 4:
-            return "spock"
-        else:
-            return "Enter number 0-4"
-
+   
 
 
