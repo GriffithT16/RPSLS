@@ -22,7 +22,7 @@ class Game:
 
     def rules_of_the_game(self):
         print('The rules of the game are as follows!\nRock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock')
-        time.sleep(3)
+        time.sleep(6)
 
     def determine_how_many_players(self):
         choice_made = False
@@ -49,11 +49,15 @@ class Game:
                 
     def gameplay(self):
         print(f"{self.player_1.name}'s turn")
+        time.sleep(1.25)
         self.player_1.choose_gesture()
         print(f"\n{self.player_1.name} has chosen {self.player_1.gesture_chosen}!\n")
+        time.sleep(1.25)
         print(f"{self.player_2.name}'s turn")
+        time.sleep(1.25)
         self.player_2.choose_gesture()
         print(f"\n{self.player_2.name} has chosen {self.player_2.gesture_chosen}!\n")
+        time.sleep(1.25)
         self.determine_winner()
 
 
