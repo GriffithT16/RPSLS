@@ -2,6 +2,7 @@ from player import Player
 from ai import Ai
 from human import Human
 import time
+import antigravity
 
 class Game:
     def __init__(self):
@@ -133,8 +134,8 @@ class Game:
             print(f"{self.player_1.name} wins the best of three!")
         elif self.player_2.total_wins == 2:
             print(f"{self.player_2.name} wins the best of three!")
-        else:
-            print("we need to keep going here")
+            
+    
         
 
 
