@@ -3,7 +3,7 @@ class Player:
         self.name = name
         self.gesture_options = ['rock', 'paper', 'scissors', 'lizard', 'spock']
         self.gesture_chosen = ""
-        self.total_wins = ""
+        self.total_wins = 0
     
     def choose_gesture(self):
         print("Choose 0 for rock.\nChoose 1 for paper.\nChoose 2 for scissors.\nChoose 3 for lizard.\nChoose 4 for spock.")
